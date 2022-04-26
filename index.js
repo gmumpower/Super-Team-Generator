@@ -3,9 +3,9 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
-const Manager = require("./library/manager");
-const Engineer = require("./library/engineer");
-const Intern = require("./library/intern");
+const Manager = require("./library/Manager");
+const Engineer = require("./library/Engineer");
+const Intern = require("./library/Intern");
 
 const render = require("./library/htmlRenderer");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
@@ -151,7 +151,6 @@ const managerPrompt = () => {
      console.log(`Success! See Team Profile Page at ${outputPath}`);
    });
  };
- 
  managerPrompt()
   .then(() => {
     return employeePrompt();
