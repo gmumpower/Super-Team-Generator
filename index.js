@@ -151,3 +151,15 @@ const managerPrompt = () => {
      console.log(`Success! See Team Profile Page at ${outputPath}`);
    });
  };
+ 
+ managerPrompt()
+  .then(() => {
+    return employeePrompt();
+  })
+  .then(() => {
+    const templateHTML = render(teamProfile);
+    createHTMLFile(templateHTML);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
